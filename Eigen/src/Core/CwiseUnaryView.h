@@ -99,6 +99,9 @@ class CwiseUnaryViewImpl<ViewOp,MatrixType,Dense>
 
     EIGEN_DENSE_PUBLIC_INTERFACE(Derived)
 
+    inline Scalar* data() { return &coeffRef(0); }
+    inline const Scalar* data() const { return &coeff(0); }
+
     inline Index innerStride() const
     {
       return derived().nestedExpression().innerStride() * sizeof(typename internal::traits<MatrixType>::Scalar) / sizeof(Scalar);

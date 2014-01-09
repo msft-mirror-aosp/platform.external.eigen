@@ -168,7 +168,7 @@ class MatrixWrapper : public MatrixBase<MatrixWrapper<ExpressionType> >
     inline Index outerStride() const { return m_expression.outerStride(); }
     inline Index innerStride() const { return m_expression.innerStride(); }
 
-    inline ScalarWithConstIfNotLvalue* data() { return m_expression.data(); }
+    inline ScalarWithConstIfNotLvalue* data() { return m_expression.const_cast_derived().data(); }
     inline const Scalar* data() const { return m_expression.data(); }
 
     inline CoeffReturnType coeff(Index row, Index col) const
