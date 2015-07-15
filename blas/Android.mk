@@ -15,13 +15,7 @@
 LOCAL_PATH:=$(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_CLANG := true
-# EIGEN_ANDROID_SSE_WR is for "Eigen Android SSE Work Around"
-# Will be removed after we understand it better.
-LOCAL_CFLAGS += -DEIGEN_ANDROID_SSE_WR
-LOCAL_MODULE := libF77blas
-
-LOCAL_SRC_FILES:= \
+eigen_SRC_FILES:= \
 	single.cpp \
 	double.cpp \
 	complex_single.cpp \
@@ -48,6 +42,29 @@ LOCAL_SRC_FILES:= \
 	f2c/d_cnjg.c \
 	f2c/r_cnjg.c
 
+LOCAL_CLANG := true
+# EIGEN_ANDROID_SSE_WR is for "Eigen Android SSE Work Around"
+# Will be removed after we understand it better.
+LOCAL_CFLAGS += -DEIGEN_ANDROID_SSE_WR
+LOCAL_MODULE := libF77blas
+
+LOCAL_SRC_FILES := $(eigen_SRC_FILES)
+LOCAL_C_INCLUDES += external/eigen/
+
+include $(BUILD_STATIC_LIBRARY)
+
+
+# Build Eigen using API 8 toolchain for RS Support lib.
+include $(CLEAR_VARS)
+LOCAL_CLANG := true
+# EIGEN_ANDROID_SSE_WR is for "Eigen Android SSE Work Around"
+# Will be removed after we understand it better.
+LOCAL_CFLAGS += -DEIGEN_ANDROID_SSE_WR
+LOCAL_MODULE := libF77blasV8
+LOCAL_SDK_VERSION := 8
+LOCAL_NDK_STL_VARIANT := stlport_static
+
+LOCAL_SRC_FILES := $(eigen_SRC_FILES)
 LOCAL_C_INCLUDES += external/eigen/
 
 include $(BUILD_STATIC_LIBRARY)
