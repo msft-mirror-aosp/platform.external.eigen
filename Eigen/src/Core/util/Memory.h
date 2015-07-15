@@ -72,7 +72,7 @@
   #define EIGEN_HAS_POSIX_MEMALIGN 0
 #endif
 
-#ifdef EIGEN_VECTORIZE_SSE
+#if defined(EIGEN_VECTORIZE_SSE) && !defined(EIGEN_ANDROID_POSIX_MEMALIGN_WR)
   #define EIGEN_HAS_MM_MALLOC 1
 #else
   #define EIGEN_HAS_MM_MALLOC 0
