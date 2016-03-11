@@ -55,7 +55,7 @@ LOCAL_C_INCLUDES += external/eigen/
 include $(BUILD_STATIC_LIBRARY)
 
 
-# Build Eigen using API 8 toolchain for RS Support lib.
+# Build Eigen using API 9 toolchain for RS Support lib.
 include $(CLEAR_VARS)
 LOCAL_CLANG := true
 # EIGEN_ANDROID_SSE_WR is for "Eigen Android SSE Work Around"
@@ -65,7 +65,7 @@ LOCAL_CFLAGS += -DEIGEN_ANDROID_SSE_WR
 # Only used for build for low Android API(x86 target) without posix_memalign.
 LOCAL_CFLAGS += -DEIGEN_ANDROID_POSIX_MEMALIGN_WR
 LOCAL_MODULE := libF77blasV8
-LOCAL_SDK_VERSION := 8
+LOCAL_SDK_VERSION := 9
 LOCAL_NDK_STL_VARIANT := c++_static
 
 LOCAL_SRC_FILES := $(eigen_SRC_FILES)
