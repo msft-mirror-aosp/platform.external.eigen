@@ -46,6 +46,7 @@ LOCAL_CLANG := true
 # EIGEN_ANDROID_SSE_WR is for "Eigen Android SSE Work Around"
 # Will be removed after we understand it better.
 LOCAL_CFLAGS += -DEIGEN_ANDROID_SSE_WR
+LOCAL_CFLAGS += -Wno-unused-parameter
 LOCAL_MODULE := libF77blas
 
 LOCAL_SRC_FILES := $(eigen_SRC_FILES)
