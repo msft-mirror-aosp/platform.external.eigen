@@ -17,3 +17,4 @@ cc_library_headers {
   name: "libeigen",
 }
 
+subdirs = ["blas"]
