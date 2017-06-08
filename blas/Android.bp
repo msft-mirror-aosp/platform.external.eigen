@@ -48,6 +48,7 @@ cc_defaults {
 cc_library_static {
     name: "libF77blas",
     defaults: ["eigen-defaults"],
+    host_supported: true,
 }
 
 // Build Eigen using API 9 toolchain for RS Support lib.
