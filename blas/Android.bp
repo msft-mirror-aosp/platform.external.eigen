@@ -42,6 +42,11 @@ cc_defaults {
         "f2c/r_cnjg.c",
     ],
     cflags: ["-Wno-unused-parameter"],
+    tidy_checks: [
+        "-google-global-names-in-headers",
+        "-misc-macro-parentheses",
+        "-misc-misplaced-widening-cast",
+    ],
     export_include_dirs: ["."],
 }
 
