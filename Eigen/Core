@@ -260,7 +260,6 @@
 #include <cmath>
 #include <cassert>
 #include <functional>
-#include <sstream>
 #include <iosfwd>
 #include <cstring>
 #include <string>
