@@ -92,6 +92,7 @@ cc_library_headers {
         "com.android.neuralnetworks",
         "test_com.android.neuralnetworks",
         "//apex_available:platform",
+        "com.android.ondevicepersonalization",
     ],
     min_sdk_version: "apex_inherit",
     sdk_version: "current",
