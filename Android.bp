@@ -90,7 +90,6 @@ cc_library_headers {
     host_supported: true,
     apex_available: [
         "com.android.neuralnetworks",
-        "test_com.android.neuralnetworks",
         "//apex_available:platform",
         "com.android.ondevicepersonalization",
     ],
